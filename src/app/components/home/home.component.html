@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    <div *ngFor="let cancion of nuevasCanciones" class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" [src]="cancion.images[0].url" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{cancion.name | uppercase }}</h5>
+          <p class="card-text">
+            <span *ngFor="let artista of cancion.artists" class="badge rounded-pill text-bg-success">{{artista.name}}</span></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
