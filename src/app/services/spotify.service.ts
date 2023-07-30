@@ -11,14 +11,18 @@ export class SpotifyService {
    }
 
   getNewReleases() {
-
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAFjSfd_wx7D3ty-KJLPwWIOkFFAjBRJ7usy5ex7otIMv9QavuQ7jCmEVM79vhk79gIJF4O9EfsfXsQKLEFCl_gSl_C-gbO42Dw8JPLGOSU7MD1bS0'
+      'Authorization': 'Bearer BQAKL6J1zc3Q9ETDxcN7JKD2jlYkCrGf2RWZW15YXzSKZlwFtOeASZFEo5YNPR1LB1M9iA_Uit9cknuov4EpD0sjSn7Wa_-68oPfHqGjXNjpbh5U4PY'
     })
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers });   
+  } 
 
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers });
-      
 
+  getArtista(termino: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQAKL6J1zc3Q9ETDxcN7JKD2jlYkCrGf2RWZW15YXzSKZlwFtOeASZFEo5YNPR1LB1M9iA_Uit9cknuov4EpD0sjSn7Wa_-68oPfHqGjXNjpbh5U4PY'
+    })
+    return this.http.get(`https://api.spotify.com/v1/search?query=${termino}&type=artist&locale=es-ES%2Ces%3Bq%3D0.9%2Cen%3Bq%3D0.8%2Cfr%3Bq%3D0.7&offset=0&limit=10`, { headers });
   }
 
 }
