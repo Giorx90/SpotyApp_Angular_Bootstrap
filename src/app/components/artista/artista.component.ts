@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-artista',
-  templateUrl: './artista.component.html',
-  styleUrls: ['./artista.component.css']
+  templateUrl: './artista.component.html'
 })
 export class ArtistaComponent {
 
